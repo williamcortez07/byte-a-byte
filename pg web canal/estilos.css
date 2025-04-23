@@ -1,0 +1,122 @@
+/* Variables de color */
+:root {
+  --color-primary: #2c3e50; /* Azul oscuro */
+  --color-secondary: #3498db; /* Azul eléctrico */
+  --color-accent: #9b59b6; /* Morado eléctrico */
+  --color-bg: #1a1a1a; /* Negro suave */
+  --color-text: #ecf0f1; /* Blanco suave */
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary),
+    var(--color-accent)
+  );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-youtube {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 30px;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(155, 89, 182, 0.5);
+}
+
+.cta-youtube:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.7);
+}
+
+.hero {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background: var(--color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.thumbnail:hover {
+  filter: brightness(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  .cta-youtube {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
